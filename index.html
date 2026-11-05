@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Portfolio Hoàng Phạm — Software Engineer, Mobile Developer và Cloud & DevOps. Khám phá Terraform, Docker, FastAPI và Flutter qua các dự án thực tế.">
+  <meta name="theme-color" content="#111310">
+  <title>Hoàng Phạm — Software, Mobile & Cloud</title>
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem('portfolio-theme'); } catch {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#111310' : '#f5f6f0';
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111310'/%3E%3Ctext x='12' y='43' fill='%23c4f464' font-family='monospace' font-size='30'%3Ehp%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Chuyển đến nội dung</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#home" aria-label="Hoàng Phạm — Trang đầu">hp<span>_</span><span class="wordmark-name">hoàng phạm</span></a>
+      <nav id="site-nav" class="site-nav" aria-label="Điều hướng chính">
+        <a href="#projects">Dự án<span>03</span></a>
+        <a href="#stack">Kỹ năng</a>
+        <a href="#approach">Cách tôi làm việc</a>
+        <a class="nav-contact" href="#contact">Kết nối <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Chuyển giao diện sáng">
+          <svg class="sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>
+        </button>
+        <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="availability"><span class="status-dot" aria-hidden="true"></span>Sẵn sàng cho cơ hội mới</p>
+        <p class="eyebrow intro">XIN CHÀO, TÔI LÀ HOÀNG PHẠM</p>
+        <h1 id="hero-title">Từ dòng code.<br> Đến <span class="accent">hạ tầng.</span><span class="title-dot"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></h1>
+        <p class="hero-description">Kỹ sư phát triển phần mềm hiểu sâu về vận hành hạ tầng Cloud. Tôi kết nối trải nghiệm người dùng, backend và quy trình triển khai thành một hệ thống liền mạch.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Khám phá dự án <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+          <a class="text-link" href="https://github.com/phamhoang1507" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="sr-only"> (mở tab mới)</span></a>
+        </div>
+        <p class="hero-roles">SOFTWARE ENGINEER <span>/</span> MOBILE DEVELOPER <span>/</span> DEVOPS</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-label"><span class="tiny-cross" aria-hidden="true">+</span> BUILD. SHIP. OPERATE. <span class="visual-label-end">v.01</span></div>
+        <div class="terminal" role="group" aria-labelledby="terminal-title">
+          <div class="terminal-top"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span id="terminal-title">hoang@workspace: ~</span><span class="terminal-shell">bash</span></div>
+          <div class="terminal-body">
+            <div class="terminal-context">~/workspace <span>on main</span></div>
+            <div class="terminal-prompt"><span aria-hidden="true">❯</span> <span id="terminal-command">terraform apply</span><span class="cursor" aria-hidden="true"></span></div>
+            <div id="terminal-output" class="terminal-output" aria-hidden="true"><div class="terminal-line is-muted">Initializing infrastructure…</div><div class="terminal-line">Plan: 3 to add, 0 to change, 0 to destroy.</div><div class="terminal-line is-success">Apply complete! Resources: 3 added.</div></div>
+          </div>
+          <div class="terminal-bottom"><span><span class="status-dot" aria-hidden="true"></span> Mô phỏng · không thực thi lệnh</span><button id="terminal-toggle" type="button" aria-pressed="false">Tạm dừng</button></div>
+          <p class="sr-only">Terminal minh họa quy trình Terraform và Docker Compose. Không kết nối đến hạ tầng thực.</p>
+        </div>
+        <div class="system-path" aria-label="Quy trình: Code, Build, Deploy, Observe"><span><i aria-hidden="true">01</i> Code</span><b aria-hidden="true">→</b><span><i aria-hidden="true">02</i> Build</span><b aria-hidden="true">→</b><span><i aria-hidden="true">03</i> Deploy</span><b aria-hidden="true">→</b><span><i aria-hidden="true">04</i> Observe</span></div>
+        <div class="visual-footnote"><span aria-hidden="true">↳</span> Không chỉ chạy được. Còn phải vận hành được.</div>
+      </div>
+    </section>
+
+    <div class="focus-strip"><div class="container focus-inner"><span class="eyebrow">MỘT TƯ DUY XUYÊN SUỐT</span><p>Trải nghiệm tốt.<span aria-hidden="true">/</span>Kiến trúc rõ.<span aria-hidden="true">/</span>Triển khai có kiểm soát.</p><span class="strip-symbol" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></div></div>
+
+    <section id="projects" class="section container" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-number">01 /</span> SELECTED WORK</p><h2 id="projects-title">Code thật. <span class="muted">Bài toán thật.</span></h2></div><p class="section-description">Ba góc nhìn về xây dựng sản phẩm:<br> hạ tầng, hệ thống và ứng dụng di động.</p></div>
+      <div class="projects-toolbar"><div class="filters" role="group" aria-label="Lọc dự án"><button type="button" data-filter="all" aria-pressed="true">Tất cả <span>03</span></button><button type="button" data-filter="devops" aria-pressed="false">Cloud & DevOps</button><button type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button><button type="button" data-filter="mobile" aria-pressed="false">Mobile</button></div><span id="filter-status" class="sr-only" role="status" aria-live="polite">Hiển thị 3 dự án</span><span class="toolbar-note">Ý tưởng → Kiến trúc → Triển khai</span></div>
+      <div class="project-grid">
+        <article class="project-card" data-category="devops">
+          <div class="project-art art-cloud" role="img" aria-label="Sơ đồ GitHub Actions kết nối Terraform, cấp phát hai môi trường AWS Staging và Production">
+            <div class="art-topline"><span>INFRASTRUCTURE AS CODE</span><span>01</span></div>
+            <div class="cloud-diagram"><div class="diagram-node node-source"><span class="node-icon">⌘</span> GitHub Actions</div><div class="diagram-line"></div><div class="diagram-node terraform-node"><span class="tf-icon" aria-hidden="true">◆</span> Terraform <span class="node-small">plan → apply</span></div><div class="branch-line"></div><div class="environment-pair"><div><span class="aws-icon">aws</span><strong>Staging</strong><small>environment</small></div><div><span class="aws-icon">aws</span><strong>Production</strong><small>environment</small></div></div></div>
+            <div class="art-bottomline"><span class="status-dot" aria-hidden="true"></span> Reproducible by design</div>
+          </div>
+          <div class="project-content"><p class="project-kind">CLOUD & DEVOPS <span>/ 01</span></p><h3>terraformCICD</h3><p>Cấp phát hạ tầng AWS cho Staging và Production bằng Terraform, tích hợp GitHub Actions để tự động hóa luồng plan/apply.</p><ul class="tags" aria-label="Công nghệ"><li>Terraform</li><li>AWS</li><li>GitHub Actions</li></ul><details class="architecture"><summary>Khám phá kiến trúc <span aria-hidden="true">+</span></summary><div><p><strong>Luồng triển khai:</strong> Git → GitHub Actions → Terraform plan/apply → AWS.</p><p><strong>Trọng tâm:</strong> cấu hình hạ tầng bằng mã, tách biệt Staging/Prod và kiểm soát thay đổi qua pipeline.</p></div></details><a class="project-link" href="https://github.com/phamhoang1507?tab=repositories&amp;q=terraformCICD" target="_blank" rel="noopener noreferrer">Tìm repository <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="sr-only"> terraformCICD trên GitHub (mở tab mới)</span></a></div>
+        </article>
+
+        <article class="project-card" data-category="fullstack">
+          <div class="project-art art-stack" role="img" aria-label="Sơ đồ Docker Compose gồm React frontend, FastAPI backend và MongoDB database">
+            <div class="art-topline"><span>CONTAINERIZED APPLICATION</span><span>02</span></div>
+            <div class="stack-diagram"><div class="stack-boundary"><span class="boundary-label">docker compose</span><div class="service-node"><span class="service-icon react-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><ellipse cx="12" cy="12" rx="11" ry="4"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><div><strong>React</strong><small>frontend</small></div><span class="service-port">:80</span></div><div class="service-connector">↓ <span>REST API</span></div><div class="service-node"><span class="service-icon fastapi-icon" aria-hidden="true">ϟ</span><div><strong>FastAPI</strong><small>backend</small></div><span class="service-port">:8000</span></div><div class="service-connector">↓ <span>internal network</span></div><div class="service-node"><span class="service-icon mongo-icon" aria-hidden="true">◒</span><div><strong>MongoDB</strong><small>database</small></div><span class="service-port">:27017</span></div></div></div>
+            <div class="art-bottomline"><span class="status-dot" aria-hidden="true"></span> One stack. One command.</div>
+          </div>
+          <div class="project-content"><p class="project-kind">FULL-STACK & DOCKER <span>/ 02</span></p><h3>Product Stack</h3><p>Ứng dụng đa container kết nối React, Python FastAPI và MongoDB. Đóng gói bằng Docker Compose với multi-stage build tối ưu.</p><ul class="tags" aria-label="Công nghệ"><li>Docker</li><li>FastAPI</li><li>React</li><li>MongoDB</li></ul><details class="architecture"><summary>Khám phá kiến trúc <span aria-hidden="true">+</span></summary><div><p><strong>Luồng dữ liệu:</strong> React → REST API → FastAPI → MongoDB.</p><p><strong>Trọng tâm:</strong> tách dịch vụ bằng container, giao tiếp qua mạng nội bộ và tách giai đoạn build khỏi runtime image.</p></div></details><a class="project-link" href="https://github.com/phamhoang1507?tab=repositories&amp;q=Product" target="_blank" rel="noopener noreferrer">Tìm repository <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="sr-only"> Product Stack trên GitHub (mở tab mới)</span></a></div>
+        </article>
+
+        <article class="project-card" data-category="mobile">
+          <div class="project-art art-mobile" role="img" aria-label="Minh họa BikeTracker với màn hình quét mã VIN, quản lý kho xe và chuyển ngôn ngữ Việt Anh">
+            <div class="art-topline"><span>MOBILE & LOGISTICS</span><span>03</span></div>
+            <div class="phone-composition"><span class="floating-label label-left">VIN / QR<br> <b>SCAN READY</b></span><div class="phone"><div class="phone-camera"></div><div class="phone-title"><span>BikeTracker</span><span aria-hidden="true">⊞</span></div><div class="phone-subtitle">QUẢN LÝ KHO XE</div><div class="scan-area"><span class="scan-corner corner-tl"></span><span class="scan-corner corner-tr"></span><span class="scan-corner corner-bl"></span><span class="scan-corner corner-br"></span><svg width="78" height="78" viewBox="0 0 78 78" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 3h24v24H3Zm5 5v14h14V8ZM51 3h24v24H51Zm5 5v14h14V8ZM3 51h24v24H3Zm5 5v14h14V56Z"/><path d="M12 12h6v6h-6zm48 0h6v6h-6zM12 60h6v6h-6zM33 3h6v12h6v6H33zm0 24h12v6H33zM3 33h12v6H3zm18 0h6v12H15v-6h6zm12 6h6v12h-6zm12 0h12v6h-6v12h-6zm18-6h12v6H63zm-6 18h6v12h12v12H57v-6h12v-6H57zM33 57h6v6h6v12H33v-6h6v-6h-6zM69 45h6v6h-6z"/></svg><span class="scan-beam"></span></div><div class="phone-scan-text">Đưa mã VIN vào khung quét</div><div class="phone-action">Quét mã xe <span aria-hidden="true">→</span></div><div class="phone-bottom"><span>Kho xe</span><span>Quét mã</span><span>Tài khoản</span></div></div><span class="floating-label label-right">l10n<br> <b>VI / EN</b></span></div>
+            <div class="art-bottomline"><span class="status-dot" aria-hidden="true"></span> Built for the workflow</div>
+          </div>
+          <div class="project-content"><p class="project-kind">FLUTTER & LOGISTICS <span>/ 03</span></p><h3>BikeTracker</h3><p>Ứng dụng quản lý kho xe với quét mã VIN/QR, phân quyền người dùng và bản địa hóa Việt/Anh bằng Flutter & Riverpod.</p><ul class="tags" aria-label="Công nghệ"><li>Flutter</li><li>Riverpod</li><li>VIN / QR</li><li>l10n</li></ul><details class="architecture"><summary>Khám phá kiến trúc <span aria-hidden="true">+</span></summary><div><p><strong>Luồng nghiệp vụ:</strong> quét VIN/QR → xử lý trạng thái với Riverpod → thao tác kho theo quyền.</p><p><strong>Trọng tâm:</strong> phân quyền, quản lý state rõ ràng và trải nghiệm nhất quán cho hai ngôn ngữ Việt/Anh.</p></div></details><a class="project-link" href="https://github.com/phamhoang1507?tab=repositories&amp;q=BikeTracker" target="_blank" rel="noopener noreferrer">Tìm repository <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="sr-only"> BikeTracker trên GitHub (mở tab mới)</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="stack-section" aria-labelledby="stack-title"><div class="container section">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-number">02 /</span> MY TOOLKIT</p><h2 id="stack-title">Đúng công cụ.<br> <span class="muted">Đúng bài toán.</span></h2></div><p class="section-description">Từ giao diện trong lòng bàn tay<br> đến dịch vụ vận hành trên Cloud.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-heading"><span class="skill-icon" aria-hidden="true">☁</span><span class="eyebrow">01</span></div><h3>Cloud & DevOps</h3><ul class="skill-list"><li><strong>AWS</strong><span>EC2 · S3 · Lambda · IAM</span></li><li><strong>Terraform</strong><span>Infrastructure as Code · cơ bản</span></li><li><strong>Docker & Compose</strong><span>Containerization · multi-stage build</span></li><li><strong>GitHub Actions</strong><span>CI/CD pipelines</span></li></ul></article>
+        <article class="skill-card"><div class="skill-heading"><span class="skill-icon" aria-hidden="true">{ }</span><span class="eyebrow">02</span></div><h3>Backend & Database</h3><ul class="skill-list"><li><strong>Python</strong><span>FastAPI · REST API</span></li><li><strong>PHP</strong><span>Laravel</span></li><li><strong>MySQL & MongoDB</strong><span>Relational · document database</span></li><li><strong>Kafka</strong><span>Event streaming · cơ bản</span></li></ul></article>
+        <article class="skill-card"><div class="skill-heading"><span class="skill-icon" aria-hidden="true">▣</span><span class="eyebrow">03</span></div><h3>Mobile & Frontend</h3><ul class="skill-list"><li><strong>Flutter & Dart</strong><span>Ứng dụng đa nền tảng</span></li><li><strong>Riverpod / BLoC</strong><span>State management</span></li><li><strong>Dio · Clean Architecture</strong><span>Networking · tổ chức mã nguồn</span></li><li><strong>React</strong><span>Component-based UI</span></li></ul></article>
+        <article class="skill-card"><div class="skill-heading"><span class="skill-icon" aria-hidden="true">&gt;_</span><span class="eyebrow">04</span></div><h3>Tooling & Environment</h3><ul class="skill-list"><li><strong>Linux / Bash</strong><span>Shell · môi trường vận hành</span></li><li><strong>Git</strong><span>Version control · collaboration</span></li><li><strong>VS Code</strong><span>Development environment</span></li><li><strong>PowerShell</strong><span>Scripting · automation</span></li></ul></article>
+      </div>
+    </div></section>
+
+    <section id="approach" class="section container approach-section" aria-labelledby="approach-title"><div class="approach-intro"><p class="eyebrow"><span class="section-number">03 /</span> ENGINEERING MINDSET</p><h2 id="approach-title">Xây để dùng.<br> <span class="muted">Thiết kế để bền.</span></h2><p>Tôi quan tâm đến cả hành trình của một tính năng: từ nhu cầu người dùng đến cách nó được triển khai và vận hành.</p><a class="text-link" href="#contact">Cùng trao đổi <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></div><div class="principles"><article><span>01</span><div><h3>Hiểu trước khi xây</h3><p>Bắt đầu từ luồng nghiệp vụ, giới hạn hệ thống và trải nghiệm thực tế của người sử dụng.</p></div><span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></article><article><span>02</span><div><h3>Rõ ràng trước khi phức tạp</h3><p>Tách trách nhiệm, tổ chức mã nguồn dễ đọc và lựa chọn công cụ phù hợp với bài toán.</p></div><span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></article><article><span>03</span><div><h3>Tự động hóa để nhất quán</h3><p>Đưa quy trình lặp lại vào container, IaC và CI/CD để thay đổi có thể tái lập và kiểm soát.</p></div><span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></article></div></section>
+
+    <section id="contact" class="container contact-section" aria-labelledby="contact-title"><div class="contact-panel"><div><p class="eyebrow">NEXT CHAPTER</p><h2 id="contact-title">Cùng xây điều<br> <span>có ý nghĩa.</span></h2><p>Tôi đang tìm cơ hội Software Engineer, Mobile Developer hoặc DevOps Engineer — nơi tư duy sản phẩm và kỹ thuật cùng tạo ra giá trị.</p><a class="button button-dark" href="https://github.com/phamhoang1507" target="_blank" rel="noopener noreferrer">Kết nối qua GitHub <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="sr-only"> (mở tab mới)</span></a></div><span class="contact-art" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></div></section>
+  </main>
+  <footer class="container site-footer"><a class="wordmark" href="#home" aria-label="Về đầu trang">hp<span>_</span></a><p>© <span id="year">2026</span> Hoàng Phạm · Được xây bằng sự chỉn chu.</p><a class="back-top" href="#home">Lên đầu trang <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>
