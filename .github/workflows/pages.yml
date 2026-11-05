@@ -27,6 +27,7 @@ jobs:
         run: |
           mkdir -p dist
           cp index.html style.css script.js dist/
+          cp -R assets dist/assets
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
