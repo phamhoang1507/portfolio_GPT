@@ -11,7 +11,7 @@ portfolio_GPT/
 ├── script.js
 ├── assets/
 │   ├── i18n.js
-│   ├── hoang-portrait.png
+│   ├── hoang-portrait-suit.png
 │   ├── Pham-Dinh-Hoang-Backend-Mobile-CV.pdf
 │   └── Pham-Dinh-Hoang-AWS-DevOps-CV.pdf
 ├── README.md
@@ -45,7 +45,7 @@ Các mô tả dự án được giới hạn theo bằng chứng trong mã ngu�
 
 - Bản dịch giao diện nằm trong `assets/i18n.js`, với cùng khóa cho `vi` và `en`. Các phần tử `data-i18n` dùng `textContent`; nội dung có định dạng được chia thành các đoạn riêng để giữ nguyên icon và chữ nhấn mạnh. Khi sửa nội dung, cập nhật cả hai bản dịch và nội dung tiếng Việt dự phòng trong `index.html`.
 - Sửa trạng thái sẵn sàng, email và liên kết theo thông tin hiện tại. Các nhãn động như menu, theme, bộ lọc và clipboard được dịch trong `script.js`.
-- Ảnh chân dung ở `assets/hoang-portrait.png`. Khi thêm ảnh hoặc tài nguyên công khai khác, đặt trong `assets/` và dùng đường dẫn tương đối.
+- Ảnh chân dung ở `assets/hoang-portrait-suit.png`. Khi thêm ảnh hoặc tài nguyên công khai khác, đặt trong `assets/` và dùng đường dẫn tương đối.
 - Hai PDF gốc được cung cấp để tải xuống công khai theo lựa chọn của chủ hồ sơ. Thay nội dung `assets/Pham-Dinh-Hoang-Backend-Mobile-CV.pdf` và `assets/Pham-Dinh-Hoang-AWS-DevOps-CV.pdf` để cập nhật CV; giữ tên tệp để các liên kết hiện tại tiếp tục hoạt động.
 - Biến màu ở đầu `style.css`; hiệu ứng và chuỗi lệnh mô phỏng nằm trong `script.js`.
 
