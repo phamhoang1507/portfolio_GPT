@@ -2,7 +2,7 @@
 
 Portfolio dành cho nhà tuyển dụng, xây bằng HTML, CSS và JavaScript thuần. Trang giới thiệu điểm mạnh gắn với kinh nghiệm, dự án doanh nghiệp, sáu repository công khai được kiểm tra mã nguồn, kỹ năng, học vấn và liên hệ.
 
-Light/dark mode, menu mobile, lọc dự án, sao chép email và terminal mô phỏng được triển khai không cần thư viện bên ngoài. Terminal chỉ trình diễn lệnh lab; không thực thi lệnh hoặc kết nối AWS.
+Chuyển ngôn ngữ Việt/Anh, light/dark mode, menu mobile, lọc dự án, sao chép email và terminal mô phỏng được triển khai không cần thư viện bên ngoài. Terminal chỉ trình diễn lệnh lab; không thực thi lệnh hoặc kết nối AWS.
 
 ```text
 portfolio_GPT/
@@ -10,6 +10,7 @@ portfolio_GPT/
 ├── style.css
 ├── script.js
 ├── assets/
+│   ├── i18n.js
 │   ├── hoang-portrait.png
 │   ├── Pham-Dinh-Hoang-Backend-Mobile-CV.pdf
 │   └── Pham-Dinh-Hoang-AWS-DevOps-CV.pdf
@@ -42,12 +43,19 @@ Các mô tả dự án được giới hạn theo bằng chứng trong mã ngu�
 
 ## Cá nhân hóa và tài nguyên
 
-- Sửa nội dung, trạng thái sẵn sàng, email và liên kết trong `index.html` theo thông tin hiện tại.
+- Bản dịch giao diện nằm trong `assets/i18n.js`, với cùng khóa cho `vi` và `en`. Các phần tử `data-i18n` dùng `textContent`; nội dung có định dạng được chia thành các đoạn riêng để giữ nguyên icon và chữ nhấn mạnh. Khi sửa nội dung, cập nhật cả hai bản dịch và nội dung tiếng Việt dự phòng trong `index.html`.
+- Sửa trạng thái sẵn sàng, email và liên kết theo thông tin hiện tại. Các nhãn động như menu, theme, bộ lọc và clipboard được dịch trong `script.js`.
 - Ảnh chân dung ở `assets/hoang-portrait.png`. Khi thêm ảnh hoặc tài nguyên công khai khác, đặt trong `assets/` và dùng đường dẫn tương đối.
 - Hai PDF gốc được cung cấp để tải xuống công khai theo lựa chọn của chủ hồ sơ. Thay nội dung `assets/Pham-Dinh-Hoang-Backend-Mobile-CV.pdf` và `assets/Pham-Dinh-Hoang-AWS-DevOps-CV.pdf` để cập nhật CV; giữ tên tệp để các liên kết hiện tại tiếp tục hoạt động.
 - Biến màu ở đầu `style.css`; hiệu ứng và chuỗi lệnh mô phỏng nằm trong `script.js`.
 
 CSS, JavaScript và tài nguyên dùng đường dẫn tương đối để hoạt động dưới GitHub Pages project site.
+
+## Ngôn ngữ Việt / Anh
+
+Nút **VI / EN** nằm trên header ở cả desktop và mobile. Ngôn ngữ mặc định là tiếng Việt; lựa chọn được lưu bằng khóa `portfolio-language`. Có thể chia sẻ trực tiếp bản Anh với `?lang=en` hoặc bản Việt với `?lang=vi`; tham số hợp lệ được ưu tiên hơn lựa chọn đã lưu. Đổi ngôn ngữ giữ nguyên theme, bộ lọc, phần chi tiết đang mở và trạng thái terminal. Nội dung, metadata, nhãn hỗ trợ truy cập và các thông báo thao tác đều dùng ngôn ngữ hiện tại.
+
+Nếu JavaScript bị tắt, nội dung tiếng Việt vẫn đọc được. Nếu trình duyệt chặn lưu trữ, nút chuyển ngôn ngữ vẫn hoạt động trong phiên hiện tại. Hai PDF CV là tài liệu gốc, không được tự động dịch.
 
 ## GitHub Pages — thao tác khoảng 2 phút
 

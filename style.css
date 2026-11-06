@@ -728,3 +728,47 @@
     .lab-layout { display: block; }
   }
 }
+
+@layer components {
+  .language-switch { display: inline-flex; align-items: center; gap: 2px; min-height: 39px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); flex-shrink: 0; }
+  .language-switch button { display: inline-flex; align-items: center; justify-content: center; min-width: 31px; min-height: 29px; padding: 4px 7px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 600; line-height: 1; letter-spacing: .03em; transition: color .18s, background-color .18s; }
+  .language-switch button:hover { color: var(--ink); background: var(--surface-soft); }
+  .language-switch button[aria-pressed='true'] { background: var(--accent); color: var(--accent-ink); }
+  .language-switch button:focus-visible { outline-offset: 3px; }
+  .language-switch button:disabled { opacity: .6; cursor: default; }
+  html:not(.js) .language-switch { display: none; }
+  :lang(en) .skill-level { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  :lang(en) .hero-copy h1 { font-size: clamp(46px, 5.1vw, 70px); }
+}
+
+@layer responsive {
+  @media (min-width: 801px) and (max-width: 1100px) {
+    :lang(en) .site-nav { gap: 15px; font-size: 11px; }
+    :lang(en) .header-inner { gap: 16px; }
+  }
+  @media (max-width: 1000px) {
+    .language-switch { min-height: 35px; padding: 3px; }
+    .language-switch button { min-height: 27px; min-width: 29px; font-size: 9px; padding-inline: 6px; }
+    :lang(en) .hero-copy h1 { font-size: clamp(43px, 5.1vw, 58px); }
+  }
+  @media (max-width: 800px) {
+    .header-actions { gap: 8px; }
+    :lang(en) .hero-copy h1 { font-size: clamp(40px, 5.6vw, 48px); }
+  }
+  @media (max-width: 600px) {
+    :lang(en) .hero-copy h1 { font-size: clamp(43px, 9.4vw, 60px); }
+    :lang(en) .hero-actions .button { gap: 14px; }
+    :lang(en) .hero-proof .proof-item > strong { overflow-wrap: anywhere; }
+    :lang(en) .contact-panel h2 { overflow-wrap: anywhere; }
+  }
+  @media (max-width: 380px) {
+    .header-actions { gap: 6px; }
+    .language-switch { gap: 1px; padding: 3px; }
+    .language-switch button { min-width: 27px; padding-inline: 5px; font-size: 9px; }
+    :lang(en) .hero-copy h1 { font-size: 41px; }
+    :lang(en) .hero-actions { gap: 8px; }
+    :lang(en) .hero-actions .button { padding-inline: 12px; gap: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .language-switch button { transition: none; } }
+  @media print { .language-switch { display: none !important; } }
+}
